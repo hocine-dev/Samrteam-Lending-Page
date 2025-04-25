@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="overflow-x-hidden">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,11 +36,12 @@
     <link rel="stylesheet" href="style.css">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 </head>
 <body class="font-sans text-gray-800 overflow-x-hidden">
     <!-- Header -->
-    <header class="fixed w-full bg-white shadow-md z-50 transition-all duration-300" id="header">
+    <header id="header"
+    class="fixed w-screen max-w-[100vw] bg-white shadow-md z-50 transition-all duration-300">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <a href="#hero" class="flex items-center">
                 <img src="images/logo.png" alt="Smarteam Digital Consulting" class="h-12">
@@ -127,53 +128,81 @@
                    data-aos="fade-up">
                 
                 <!-- Coordonnées (1/3) -->
-                <div class="flex flex-col justify-center space-y-6">
+                <div class="order-2 md:order-1 flex flex-col justify-center space-y-6">
                   <h3 class="text-2xl font-semibold text-teal-500">Nos coordonnées</h3>
                   <ul class="space-y-4 text-gray-700 text-sm">
-                    <!-- Adresse -->
-                    <li class="flex items-start gap-3">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-teal-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <!-- Heroicon: Map Pin -->
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M5.121 17.804A1 1 0 015 17V12a7 7 0 0114 0v5a1 1 0 01-.121.804l-6 8a1 1 0 01-1.758 0l-6-8z"/>
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M12 15v.01"/>
-                      </svg>
-                      <div>
-                        <p class="font-medium">Adresse</p>
-                        <p>7 Rue des Frères Slimani,<br/>Tizi Ouzou 15000</p>
-                      </div>
-                    </li>
+                  
+<!-- Adresse -->
+<li class="flex items-start gap-3">
+  <!-- Heroicon: Location Marker (solid) -->
+  <svg xmlns="http://www.w3.org/2000/svg"
+       class="w-6 h-6 text-teal-500 flex-shrink-0"
+       fill="currentColor"
+       viewBox="0 0 20 20">
+    <path fill-rule="evenodd"
+          d="M10 2a6 6 0 016 6c0 3.866-6 11-6 11S4 11.866 4 8a6 6 0 016-6zm0
+             8a2 2 0 100-4 2 2 0 000 4z"
+          clip-rule="evenodd"/>
+  </svg>
+  <div>
+    <p class="font-medium">Adresse</p>
+    <p>7 Rue des Frères Slimani,<br/>Tizi Ouzou 15000</p>
+  </div>
+</li>
+
+
                 
-                    <!-- Email -->
-                    <li class="flex items-start gap-3">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-teal-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <!-- Heroicon: Mail -->
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-18 8h18V6H3v10z"/>
-                      </svg>
-                      <div>
-                        <p class="font-medium">Email</p>
-                        <a href="mailto:contact@smarteam-dz.com" class="underline hover:text-teal-600">
-                          contact@smarteam-dz.com
-                        </a>
-                      </div>
-                    </li>
+                   
+                   <!-- Email -->
+<li class="flex items-start gap-3">
+  <!-- Heroicon: Envelope (solid) -->
+  <svg xmlns="http://www.w3.org/2000/svg"
+       class="w-6 h-6 text-teal-500 flex-shrink-0"
+       fill="currentColor"
+       viewBox="0 0 20 20">
+    <path d="M2.94 6.94a1.5 1.5 0 011.267-.69h11.586a1.5 1.5 0 011.267.69l-6.775
+             4.518a.5.5 0 01-.584 0L2.94 6.94z"/>
+    <path d="M18 8.308V14.5A1.5 1.5 0 0116.5 16h-13A1.5 1.5 0 012 14.5v-6.192l7.308
+             4.875a1.5 1.5 0 001.384 0L18 8.308z"/>
+  </svg>
+  <div>
+    <p class="font-medium">Email</p>
+    <a href="mailto:contact@smarteam-dz.com"
+       class="underline hover:text-teal-600">
+      contact@smarteam-dz.com
+    </a>
+  </div>
+</li>
+
                 
-                    <!-- Site Web -->
-                    <li class="flex items-start gap-3">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-teal-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <!-- Heroicon: Globe Alt -->
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M12 2a10 10 0 100 20 10 10 0 000-20zm-7.5 10h15m-7.5-7.5v15"/>
-                      </svg>
-                      <div>
-                        <p class="font-medium">Site Web</p>
-                        <a href="https://smarteam-dz.com/" target="_blank" class="underline hover:text-teal-600">
-                          smarteam-dz.com
-                        </a>
-                      </div>
-                    </li>
+                  
+                  <!-- Site Web -->
+<li class="flex items-start gap-3">
+  <!-- Heroicon: Link -->
+  <svg xmlns="http://www.w3.org/2000/svg"
+       class="w-6 h-6 text-teal-500 flex-shrink-0"
+       fill="none"
+       viewBox="0 0 24 24"
+       stroke="currentColor"
+       stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round"
+          d="M10 13a5 5 0 007.07 0l3.54-3.54
+             a5 5 0 00-7.07-7.07L10 5.93"/>
+    <path stroke-linecap="round" stroke-linejoin="round"
+          d="M14 11a5 5 0 00-7.07 0l-3.54 3.54
+             a5 5 0 007.07 7.07L14 18.07"/>
+  </svg>
+  <div>
+    <p class="font-medium">Site Web</p>
+    <a href="https://smarteam-dz.com/"
+       target="_blank"
+       rel="noopener"
+       class="underline hover:text-teal-600">
+      smarteam-dz.com
+    </a>
+  </div>
+</li>
+
                 
                     <!-- Téléphone -->
                     <li class="flex items-start gap-3">
@@ -194,7 +223,7 @@
                 
           
                 <!-- Formulaire (2/3) -->
-                <div class="md:col-span-2">
+                <div class="order-1 md:order-2 md:col-span-2">
                   <form id="contact-form" class="grid grid-cols-1 md:grid-cols-2 gap-6"
                         data-aos="fade-left">
                     <!-- Nom -->
@@ -336,24 +365,26 @@
           
       
           <!-- Statistiques animées -->
-          <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div class="mt-20 grid grid-cols-2 md:grid-cols-3 gap-6 text-center">
+            <!-- Années d'expérience -->
             <div class="p-6 bg-gray-50 rounded-lg" data-aos="zoom-in" data-aos-delay="400">
               <p class="text-4xl font-bold text-teal-500">+13</p>
               <p class="text-gray-600">Années d'expérience</p>
             </div>
+          
+            <!-- Projets réalisés -->
             <div class="p-6 bg-gray-50 rounded-lg" data-aos="zoom-in" data-aos-delay="500">
               <p class="text-4xl font-bold text-teal-500">50+</p>
               <p class="text-gray-600">Projets réalisés</p>
             </div>
+          
+            <!-- Clients satisfaits -->
             <div class="p-6 bg-gray-50 rounded-lg" data-aos="zoom-in" data-aos-delay="600">
               <p class="text-4xl font-bold text-teal-500">50+</p>
               <p class="text-gray-600">Clients satisfaits</p>
             </div>
-            <div class="p-6 bg-gray-50 rounded-lg" data-aos="zoom-in" data-aos-delay="700">
-              <p class="text-4xl font-bold text-teal-500">7</p>
-              <p class="text-gray-600">Jours de Support continu</p>
-            </div>
           </div>
+          
         </div>
       
         <!-- AOS & Counter JS -->
