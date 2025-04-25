@@ -61,14 +61,37 @@ document.addEventListener('DOMContentLoaded', function() {
                 formDataObj[key] = value;
             });
             
-            // Simulate form submission
-            console.log('Form submitted:', formDataObj);
-            
-            // Show success message (in a real implementation, this would happen after AJAX)
-            alert('Merci pour votre message ! Nous vous contacterons très rapidement.');
-            
-            // Reset form
-            contactForm.reset();
+            Swal.fire({
+                title: 'Envoi en cours...',
+                text: 'Merci de patienter pendant l’envoi de votre message.',
+                allowOutsideClick: false,
+                didOpen: () => {
+                  Swal.showLoading();
+                }
+              });
+
+            emailjs.sendForm('service_de7cpil', 'template_07hwe8c', contactForm)
+            .then(() => {
+                Swal.fire({
+                    title: 'Merci pour votre message !',
+                    text: 'Nous vous contacterons très rapidement.',
+                    icon: 'success',
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true
+                });
+            }).catch((error) => {
+                console.error('Erreur EmailJS:', error);
+                Swal.fire({
+                    title: 'Erreur',
+                    text: 'Une erreur est survenue lors de l’envoi du message.',
+                    icon: 'error',
+                    confirmButtonColor: '#ef4444'
+                });
+            }).finally(() => {
+                // Reset form
+                contactForm.reset();
+            });
         });
     }
 
@@ -121,3 +144,26 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', checkFadeElements);
     checkFadeElements(); // Initial check
 });
+      AOS.init({ once: true, duration: 600 });
+    
+// Référence du bouton
+const backToTopBtn = document.getElementById('back-to-top');
+
+// Afficher/masquer le bouton au scroll
+window.addEventListener('scroll', () => {
+if (window.scrollY > 200) {
+  backToTopBtn.classList.remove('invisible', 'opacity-0', 'translate-y-4');
+  backToTopBtn.classList.add('visible', 'opacity-100', 'translate-y-0');
+} else {
+  backToTopBtn.classList.add('invisible', 'opacity-0', 'translate-y-4');
+  backToTopBtn.classList.remove('visible', 'opacity-100', 'translate-y-0');
+}
+});
+
+// Scroll fluide vers le haut
+backToTopBtn.addEventListener('click', () => {
+window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+
+
