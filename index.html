@@ -10,22 +10,23 @@
     <meta name="theme-color" content="#00B2A9" />
   
     <!-- Tailwind CSS CDN -->
-  <link rel="stylesheet" href="./style.css">
+    <link rel="preload" href="/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/style.css"></noscript>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect"  href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
   <!--  AOS -->
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer ></script>
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <!-- SweetAlert2 CSS & JS -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
 <script>
-  emailjs.init('kY1n9SYWcLUGRpmQP'); // Remplace par ta clé publique EmailJS
+  emailjs.init('kY1n9SYWcLUGRpmQP');defer
 </script>
 </head>
 
@@ -849,7 +850,7 @@
   </footer>
 
 
-  <!-- Back to top button -->
+ 
   <!-- Back to top button -->
   <button id="back-to-top" aria-label="Retour en haut"
     class="fixed bottom-6 right-6 z-50 bg-teal-500 text-white p-3 rounded-full shadow-lg
@@ -862,7 +863,7 @@
 
 
   <!-- JavaScript -->
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 
 </html>
