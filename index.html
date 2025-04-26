@@ -9,26 +9,8 @@
     content="Depuis plus de 13 ans, Smarteam aide les entreprises à se faire connaître et à attirer de nouveaux clients grâce à des sites web performants.">
     <meta name="theme-color" content="#00B2A9" />
   
-    <!-- Tailwind CSS -->
-  <script src="./assets/tailwind.js"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            teal: {
-              500: '#00B2A9',
-              600: '#009992',
-              700: '#008880',
-            }
-          },
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-          },
-        }
-      }
-    }
-  </script>
+    <!-- Tailwind CSS CDN -->
+  <link rel="stylesheet" href="./style.css">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,11 +19,11 @@
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
   <!--  AOS -->
-  <script src="./assets/aos.js"></script>
-  <link href="./assets/aos.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <!-- SweetAlert2 CSS & JS -->
-<script src="./assets/sweatalert.js"></script>
-<script src="./assets/email.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
   emailjs.init('kY1n9SYWcLUGRpmQP'); // Remplace par ta clé publique EmailJS
 </script>
