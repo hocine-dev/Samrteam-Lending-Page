@@ -9,6 +9,13 @@
     content="Depuis plus de 13 ans, Smarteam aide les entreprises à se faire connaître et à attirer de nouveaux clients grâce à des sites web performants.">
     <meta name="theme-color" content="#00B2A9" />
   
+
+ <!-- thief  CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.2/color-thief.umd.js"
+    integrity="sha512-HNQzQGv8BLnYRfFcn4tcP26kkFaspsyJIKaf/22ybXQZBVZsajC08wWw/h3f6rmmB2+GXrTNxzSb0FICXgX3Lw=="
+    crossorigin="anonymous"></script>
+
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -22,9 +29,7 @@
                             700: '#008880',
                         }
                     },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
+                    fontFamily: { utendo: ['Utendo', 'sans-serif'] },
                 }
             }
         }
@@ -34,6 +39,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Utendo&display=swap" rel="stylesheet">
   <link rel="preconnect"  href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
@@ -50,49 +56,119 @@
 
 <body class="font-sans text-gray-800 overflow-x-hidden">
   <!-- Header -->
-  <header id="header" class="fixed w-screen max-w-[100vw] bg-white shadow-md z-50 transition-all duration-300">
-    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-      <a href="#hero" class="flex items-center">
-        <img src="images/logo.png" alt="Smarteam Digital Consulting" class="h-12" width="auto" height="auto">
+  <header
+  id="header"
+  class="fixed w-screen max-w-[100vw] bg-white shadow-md z-50 transition-all duration-300 font-utendo"
+>
+  <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+    <!-- Logo -->
+    <a href="#hero" class="flex items-center">
+      <img
+        src="images/logo.png"
+        alt="Smarteam Digital Consulting"
+        class="h-12"
+        width="auto"
+        height="auto"
+      />
+    </a>
+
+    <!-- Menu Desktop -->
+    <nav class="hidden md:flex space-x-8">
+      <a
+        href="#pourquoi-nous"
+        class="text-gray-700 hover:text-[#00b9ad] transition-colors"
+      >
+        Pourquoi nous
       </a>
-
-      <nav class="hidden md:flex space-x-8">
-        <a href="#pourquoi-nous" class="text-gray-700 hover:text-teal-500 transition-colors">Pourquoi nous</a>
-        <a href="#realitions" class="text-gray-700 hover:text-teal-500 transition-colors">Réalisations</a>
-        <a href="#accompagnement" class="text-gray-700 hover:text-teal-500 transition-colors">Accompagnement</a>
-        <a href="#contact" class="text-gray-700 hover:text-teal-500 transition-colors">Contact</a>
-      </nav>
-
-      <a href="#contact"
-        class="hidden md:block bg-teal-700 hover:bg-teal-600 text-white font-medium px-6 py-2 rounded-md transition-colors">
-        Discutons de votre projet
+      <a
+        href="#realitions"
+        class="text-gray-700 hover:text-[#00b9ad] transition-colors"
+      >
+        Réalisations
       </a>
+      <a
+        href="#accompagnement"
+        class="text-gray-700 hover:text-[#00b9ad] transition-colors"
+      >
+        Accompagnement
+      </a>
+      <a
+        href="#contact"
+        class="text-gray-700 hover:text-[#00b9ad] transition-colors"
+      >
+        Contact
+      </a>
+    </nav>
 
-      <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-        <span class="sr-only">Menu</span>
-      </button>
-    </div>
+    <!-- Bouton Desktop -->
+    <a
+      href="#contact"
+      class="hidden md:block bg-[#00b9ad] hover:bg-opacity-90 text-white font-medium px-6 py-2 rounded-md transition-colors"
+    >
+    Consultez notre expert    </a>
 
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="md:hidden hidden bg-white shadow-md">
-      <div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
-        <a href="#pourquoi-nous" class="text-gray-700 hover:text-teal-500 transition-colors">Pourquoi nous</a>
-        <a href="#realisations" class="text-gray-700 hover:text-teal-500 transition-colors">Réalisations</a>
-        <a href="#accompagnement" class="text-gray-700 hover:text-teal-500 transition-colors">Accompagnement</a>
-        <a href="#contact" class="text-gray-700 hover:text-teal-500 transition-colors">Contact</a>
-        <a href="#contact"
-          class="bg-teal-500 hover:bg-teal-600 text-white font-medium px-6 py-2 rounded-md transition-colors text-center">
-          Discutons de votre projet
-        </a>
-      </div>
+    <!-- Bouton Mobile -->
+    <button
+      id="mobile-menu-button"
+      class="md:hidden text-gray-700 focus:outline-none"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"
+        />
+      </svg>
+      <span class="sr-only">Menu</span>
+    </button>
+  </div>
+
+  <!-- Menu Mobile -->
+  <div id="mobile-menu" class="md:hidden hidden bg-white shadow-md">
+    <div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
+      <a
+        href="#pourquoi-nous"
+        class="text-gray-700 hover:text-[#00b9ad] transition-colors"
+      >
+        Pourquoi nous
+      </a>
+      <a
+        href="#realisations"
+        class="text-gray-700 hover:text-[#00b9ad] transition-colors"
+      >
+        Réalisations
+      </a>
+      <a
+        href="#accompagnement"
+        class="text-gray-700 hover:text-[#00b9ad] transition-colors"
+      >
+        Accompagnement
+      </a>
+      <a
+        href="#contact"
+        class="text-gray-700 hover:text-[#00b9ad] transition-colors"
+      >
+        Contact
+      </a>
+      <a
+        href="#contact"
+        class="bg-[#00b9ad] hover:bg-opacity-90 text-white font-medium px-6 py-2 rounded-md transition-colors text-center"
+      >
+      Consultez notre expert
+      </a>
     </div>
-  </header>
+  </div>
+</header>
 
   <!-- Hero Section -->
-  <section class="pt-32 pb-20 bg-gradient-to-br from-gray-50 to-gray-100" id="hero">
+  <section class="pt-32 pb-20 bg-gradient-to-br from-gray-50 to-gray-100 font-utendo" id="hero">
     <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
       <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
         <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
@@ -104,16 +180,7 @@
           croyons qu'un site n'est pas qu'une vitrine : c'est un véritable levier d'acquisition, pensé pour convertir et
           faire grandir votre business.
         </p>
-        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-          <a href="#contact"
-            class="bg-teal-700 hover:bg-teal-600 text-white font-medium px-8 py-3 rounded-md transition-colors text-center">
-            Discutons de votre projet
-          </a>
-          <a href="#pourquoi-nous"
-            class="border border-gray-300 hover:border-teal-500 text-gray-700 hover:text-teal-500 font-medium px-8 py-3 rounded-md transition-colors text-center">
-            En savoir plus
-          </a>
-        </div>
+      
       </div>
       <div class="md:w-1/2 relative flex justify-center">
         <div
@@ -130,7 +197,7 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-20 bg-gray-50">
+  <section id="contact" class="py-20 bg-gray-50 font-utendo">
 
     <div class="container mx-auto px-4">
       <!-- En-tête -->
@@ -139,7 +206,7 @@
         <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
           Remplissez ce formulaire, nous vous recontacterons rapidement avec une solution sur mesure.
         </p>
-        <div class="w-20 h-1 bg-teal-500 mx-auto mt-6 rounded-full"></div>
+        <div class="w-20 h-1 bg-[#00b9ad] mx-auto mt-6 rounded-full"></div>
       </div>
 
       <!-- Grille 1/3 – 2/3 -->
@@ -256,7 +323,7 @@
             <!-- Bouton -->
             <div class="md:col-span-2">
               <button type="submit"
-                class="w-full py-3 bg-teal-500 hover:bg-teal-600 text-white font-semibold rounded-lg shadow transition-transform transform hover:scale-105">
+                class="w-full py-3 bg-[#00b9ad] hover:bg-[#00b9ad] text-white font-semibold rounded-lg shadow transition-transform transform hover:scale-105">
                 Je souhaite être contacté
               </button>
             </div>
@@ -270,53 +337,95 @@
 
 
   <!-- Pourquoi nous choisir Section -->
-  <section id="pourquoi-nous" class="py-20 bg-white relative overflow-hidden">
-    <!-- Background Shapes -->
-    <div class="absolute -top-10 left-1/4 w-48 h-48 bg-teal-100 rounded-full opacity-30 animate-pulse"></div>
-    <div class="absolute bottom-0 right-10 w-64 h-64 bg-teal-200 rounded-full opacity-20 animate-pulse delay-1000">
+  <section id="pourquoi-nous" class="py-20 bg-white relative overflow-hidden font-utendo">
+    <!-- Top-left background logo -->
+    <div class="absolute top-0 left-0 w-48 h-48 animate-pulse">
+      <img
+        src="images/logobg.png"
+        alt=""
+        class="w-full h-full object-cover opacity-30 rounded-full"
+      />
     </div>
-
+  
+    <!-- Bottom-right background logo -->
+    <div class="absolute bottom-0 right-0 w-64 h-64 animate-pulse delay-1000">
+      <img
+        src="images/logobg.png"
+        alt=""
+        class="w-full h-full object-cover opacity-20 rounded-full"
+      />
+    </div>
+  
     <div class="container mx-auto px-4">
       <!-- Titre -->
       <div class="text-center mb-16" data-aos="fade-down">
         <h2 class="text-3xl md:text-4xl font-extrabold">Pourquoi choisir Smarteam ?</h2>
-        <div class="w-20 h-1 bg-teal-500 mx-auto mt-4 rounded-full"></div>
+        <div class="w-20 h-1 bg-[#00b9ad] mx-auto mt-4 rounded-full"></div>
       </div>
-
+  
       <!-- Cartes -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <!-- Carte 1 : Expérience reconnue -->
-        <div class="group bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center
-                        transition-transform transform hover:-translate-y-2 hover:shadow-2xl duration-300"
-          data-aos="fade-up" data-aos-delay="100">
-          <div class="w-16 h-16 bg-gradient-to-br from-teal-500 to-teal-600 rounded-full
-                          flex items-center justify-center mb-4">
+        <div
+          class="group bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center
+                 transition-transform transform hover:-translate-y-2 hover:shadow-2xl duration-300"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          <div
+            class="w-16 h-16 bg-gradient-to-br from-teal-500 to-teal-600 rounded-full
+                   flex items-center justify-center mb-4"
+          >
             <!-- Heroicon : Star -->
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20"
-              aria-hidden="true">
-              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.955a1 1 0 00.95.69h4.163
-                           c.969 0 1.371 1.24.588 1.81l-3.371 2.455a1 1 0 00-.363 1.118l1.287
-                           3.955c.3.921-.755 1.688-1.538 1.118l-3.371-2.455a1 1 0 00-1.176
-                           0l-3.371 2.455c-.783.57-1.838-.197-1.538-1.118l1.287-3.955a1 1
-                           0 00-.363-1.118L2.07 9.382c-.783-.57-.38-1.81.588-1.81h4.163a1
-                           1 0 00.95-.69l1.286-3.955z" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-8 h-8 text-white"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              aria-hidden="true"
+            >
+              <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.955a1 1 0
+                   00.95.69h4.163c.969 0 1.371 1.24.588 1.81l-3.371
+                   2.455a1 1 0 00-.363 1.118l1.287 3.955c.3.921-.755
+                   1.688-1.538 1.118l-3.371-2.455a1 1 0 00-1.176
+                   0l-3.371 2.455c-.783.57-1.838-.197-1.538-1.118l1.287-3.955a1
+                   1 0 00-.363-1.118L2.07 9.382c-.783-.57-.38-1.81.588-1.81h4.163a1
+                   1 0 00.95-.69l1.286-3.955z"
+              />
             </svg>
           </div>
           <h3 class="text-xl font-semibold mb-2">Expérience reconnue</h3>
-          <p class="text-gray-600">Plus de 13 ans d’expertise pour vous accompagner pas à pas dans votre projet digital.
+          <p class="text-gray-600">
+            Plus de 13 ans d’expertise pour vous accompagner pas à pas dans votre projet digital.
           </p>
         </div>
-
+  
         <!-- Carte 2 : Approche humaine & sur-mesure -->
-        <div class="group bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center
-                   transition-transform transform hover:-translate-y-2 hover:shadow-2xl duration-300"
-          data-aos="fade-up" data-aos-delay="200">
-          <div class="w-16 h-16 bg-gradient-to-br from-teal-500 to-teal-600 rounded-full
-                     flex items-center justify-center mb-4">
+        <div
+          class="group bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center
+                 transition-transform transform hover:-translate-y-2 hover:shadow-2xl duration-300"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <div
+            class="w-16 h-16 bg-gradient-to-br from-teal-500 to-teal-600 rounded-full
+                   flex items-center justify-center mb-4"
+          >
             <!-- Heroicon : User -->
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20"
-              aria-hidden="true">
-              <path fill-rule="evenodd" d="M10 2a4 4 0 100 8 4 4 0 000-8zm-7 16a7 7 0 0114 0H3z" clip-rule="evenodd" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-8 h-8 text-white"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 2a4 4 0 100 8 4 4 0 000-8zm-7
+                   16a7 7 0 0114 0H3z"
+                clip-rule="evenodd"
+              />
             </svg>
           </div>
           <h3 class="text-xl font-semibold mb-2">Approche humaine & sur-mesure</h3>
@@ -324,70 +433,73 @@
             Une écoute approfondie de vos besoins pour une solution web 100 % adaptée.
           </p>
         </div>
-
-
+  
         <!-- Carte 3 : Références probantes -->
-        <div class="group bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center
-                        transition-transform transform hover:-translate-y-2 hover:shadow-2xl duration-300"
-          data-aos="fade-up" data-aos-delay="300">
-          <div class="w-16 h-16 bg-gradient-to-br from-teal-500 to-teal-600 rounded-full
-                          flex items-center justify-center mb-4">
+        <div
+          class="group bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center
+                 transition-transform transform hover:-translate-y-2 hover:shadow-2xl duration-300"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
+          <div
+            class="w-16 h-16 bg-gradient-to-br from-teal-500 to-teal-600 rounded-full
+                   flex items-center justify-center mb-4"
+          >
             <!-- Heroicon : Chart Bar -->
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20"
-              aria-hidden="true">
-              <path d="M2 11a1 1 0 011-1h2a1 1 0
-                           011 1v6a1 1 0 01-1 1H3a1 1 0
-                           01-1-1v-6zm6-4a1 1 0 011-1h2a1 1 0
-                           011 1v10a1 1 0 01-1 1H9a1 1 0
-                           01-1-1V7zm6-6a1 1 0 011-1h2a1 1 0
-                           011 1v16a1 1 0 01-1 1h-2a1 1 0
-                           01-1-1V1z" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-8 h-8 text-white"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              aria-hidden="true"
+            >
+              <path
+                d="M2 11a1 1 0 011-1h2a1 1 0 011
+                   1v6a1 1 0 01-1 1H3a1 1 0 01-1-1v-6zm6-4a1
+                   1 0 011-1h2a1 1 0 011 1v10a1 1 0 01-1
+                   1H9a1 1 0 01-1-1V7zm6-6a1 1 0 011-1h2a1
+                   1 0 011 1v16a1 1 0 01-1 1h-2a1 1 0
+                   01-1-1V1z"
+              />
             </svg>
           </div>
           <h3 class="text-xl font-semibold mb-2">Références probantes</h3>
-          <p class="text-gray-600">Des partenariats durables et de belles réussites, année après année.</p>
+          <p class="text-gray-600">
+            Des partenariats durables et de belles réussites, année après année.
+          </p>
         </div>
       </div>
-
-
+  
       <!-- Statistiques animées -->
       <div class="mt-20 grid grid-cols-2 md:grid-cols-3 gap-6 text-center">
-        <!-- Années d'expérience -->
         <div class="p-6 bg-gray-50 rounded-lg" data-aos="zoom-in" data-aos-delay="400">
           <p class="text-4xl font-bold text-teal-500">+13</p>
           <p class="text-gray-600">Années d'expérience</p>
         </div>
-
-        <!-- Projets réalisés -->
         <div class="p-6 bg-gray-50 rounded-lg" data-aos="zoom-in" data-aos-delay="500">
           <p class="text-4xl font-bold text-teal-500">50+</p>
           <p class="text-gray-600">Projets réalisés</p>
         </div>
-
-        <!-- Clients satisfaits -->
         <div class="p-6 bg-gray-50 rounded-lg" data-aos="zoom-in" data-aos-delay="600">
           <p class="text-4xl font-bold text-teal-500">50+</p>
           <p class="text-gray-600">Clients satisfaits</p>
         </div>
       </div>
-
     </div>
-
-    <!-- AOS & Counter JS -->
-    
   </section>
+  
 
 
 
   <!-- Réalisations Section -->
-  <section id="realisations" class="py-20 bg-gray-50">
+  <section id="realisations" class="py-20 bg-gray-50 font-utendo">
     <div class="container mx-auto px-4">
       <!-- Titre -->
       <div class="text-center mb-16" data-aos="fade-down">
         <h2 class="text-3xl md:text-4xl font-extrabold">
           Quelques réalisations qui nous tiennent à cœur
         </h2>
-        <div class="w-20 h-1 bg-teal-500 mx-auto mt-4 rounded-full"></div>
+        <div class="w-20 h-1 bg-[#00b9ad] mx-auto mt-4 rounded-full"></div>
       </div>
 
       <!-- Grille responsive -->
@@ -458,88 +570,37 @@
           </div>
         </article>
       </div>
-
-   
-
-    
   </section>
 
 
 
   <!-- Témoignages Section -->
-  <section id="temoignages" class="py-20 bg-white">
+  <section id="temoignages" class="py-20 bg-white font-utendo">
     <div class="container mx-auto px-4">
       <!-- En-tête -->
       <div class="text-center mb-16">
         <h2 class="text-3xl md:text-4xl font-extrabold">Ce que nos clients disent de nous</h2>
-        <div class="w-20 h-1 bg-teal-500 mx-auto mt-4 rounded-full"></div>
+        <div class="w-20 h-1 bg-[#00b9ad] mx-auto mt-4 rounded-full"></div>
       </div>
-
+  
       <!-- Grille des témoignages -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
+        
         <!-- Témoignage 1: Zineb CHAMMA -->
         <figure
           class="bg-gray-50 rounded-lg p-8 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center">
-          <!-- Icône utilisateur -->
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-24 h-24 text-gray-300 mb-4" fill="currentColor"
-            viewBox="0 0 24 24">
-            <path
-              d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.4c-3.3 0-9.8 1.7-9.8 5v2.4h19.6v-2.4c0-3.3-6.5-5-9.8-5z" />
-          </svg>
+          <!-- Logo entreprise t1 -->
+          <img src="images/t1.webp" alt="Logo Connectics" 
+               class=" mb-4 p-2 w-[300px] h-[170px]" />
           <figcaption class="font-bold text-lg">Zineb CHAMMA</figcaption>
           <p class="text-sm text-gray-500 mb-2">Chief Operating Officer at Connectics - Néo-Data</p>
-          <!-- 5 Étoiles -->
           <div class="flex space-x-1 mb-4">
-            <!-- Heroicons Star Solid -->
-            <svg class="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.955a1 1 0
-                         00.95.69h4.163c.969 0 1.371 1.24.588 1.81l-3.371 2.455a1 1 0
-                         00-.363 1.118l1.287 3.955c.3.921-.755 1.688-1.538
-                         1.118l-3.371-2.455a1 1 0 00-1.176 0l-3.371
-                         2.455c-.783.57-1.838-.197-1.538-1.118l1.287-3.955a1 1
-                         0 00-.363-1.118L2.07 9.382c-.783-.57-.38-1.81.588-1.81h4.163a1
-                         1 0 00.95-.69l1.286-3.955z" />
-            </svg>
-            <svg class="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.955a1 1 0
-                         00.95.69h4.163c.969 0 1.371 1.24.588 1.81l-3.371 2.455a1 1 0
-                         00-.363 1.118l1.287 3.955c.3.921-.755 1.688-1.538
-                         1.118l-3.371-2.455a1 1 0 00-1.176 0l-3.371
-                         2.455c-.783.57-1.838-.197-1.538-1.118l1.287-3.955a1 1
-                         0 00-.363-1.118L2.07 9.382c-.783-.57-.38-1.81.588-1.81h4.163a1
-                         1 0 00.95-.69l1.286-3.955z" />
-            </svg>
-            <svg class="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.955a1 1 0
-                         00.95.69h4.163c.969 0 1.371 1.24.588 1.81l-3.371 2.455a1 1 0
-                         00-.363 1.118l1.287 3.955c.3.921-.755 1.688-1.538
-                         1.118l-3.371-2.455a1 1 0 00-1.176 0l-3.371
-                         2.455c-.783.57-1.838-.197-1.538-1.118l1.287-3.955a1 1
-                         0 00-.363-1.118L2.07 9.382c-.783-.57-.38-1.81.588-1.81h4.163a1
-                         1 0 00.95-.69l1.286-3.955z" />
-            </svg>
-            <svg class="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.955a1 1 0
-                         00.95.69h4.163c.969 0 1.371 1.24.588 1.81l-3.371 2.455a1 1 0
-                         00-.363 1.118l1.287 3.955c.3.921-.755 1.688-1.538
-                         1.118l-3.371-2.455a1 1 0 00-1.176 0l-3.371
-                         2.455c-.783.57-1.838-.197-1.538-1.118l1.287-3.955a1 1
-                         0 00-.363-1.118L2.07 9.382c-.783-.57-.38-1.81.588-1.81h4.163a1
-                         1 0 00.95-.69l1.286-3.955z" />
-            </svg>
-            <svg class="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.955a1 1 0
-                         00.95.69h4.163c.969 0 1.371 1.24.588 1.81l-3.371 2.455a1 1 0
-                         00-.363 1.118l1.287 3.955c.3.921-.755 1.688-1.538
-                         1.118l-3.371-2.455a1 1 0 00-1.176 0l-3.371
-                         2.455c-.783.57-1.838-.197-1.538-1.118l1.287-3.955a1 1
-                         0 00-.363-1.118L2.07 9.382c-.783-.57-.38-1.81.588-1.81h4.163a1
-                         1 0 00.95-.69l1.286-3.955z" />
-            </svg>
-          </div>
-          <div class="flex space-x-1 mb-4">
-            
+            <!-- 5 étoiles -->
+            <svg class="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049..."/></svg>
+            <svg class="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049..."/></svg>
+            <svg class="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049..."/></svg>
+            <svg class="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049..."/></svg>
+            <svg class="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049..."/></svg>
           </div>
           <blockquote class="text-gray-600">
             J’ai eu le plaisir de collaborer avec Amine sur plusieurs projets,
@@ -547,243 +608,215 @@
             Il sait allier écoute, réactivité et solutions adaptées aux besoins de ses clients.
           </blockquote>
         </figure>
-
-        <!-- Témoignage 2: AMINE BENALI -->
+  
+        <!-- Témoignage 2: Samia Ainceri -->
         <figure
           class="bg-gray-50 rounded-lg p-8 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-24 h-24 text-gray-300 mb-4" fill="currentColor"
-            viewBox="0 0 24 24">
-            <path
-              d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.4c-3.3 0-9.8 1.7-9.8 5v2.4h19.6v-2.4c0-3.3-6.5-5-9.8-5z" />
-          </svg>
-          <figcaption class="font-bold text-lg">AMINE BENALI</figcaption>
-          <p class="text-sm text-gray-500 mb-2">DIRECTOR GERENTE, Development Export Consulting International</p>
-          <!-- 5 Étoiles -->
+          <!-- Logo entreprise t2 -->
+          <img src="images/t3.png" alt="Logo AGENCE IMMOBILIERE LA RÉSIDENCE" 
+               class="mb-4 p-2 w-[300px] h-[170px]" />
+          <figcaption class="font-bold text-lg">Samia Ainceri</figcaption>
+            <p class="text-sm text-gray-500 mb-2">chef d'agence immobiliere la résidence</p>
           <div class="flex space-x-1 mb-4">
-            <!-- Heroicons Star Solid -->
-            <svg class="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.955a1 1 0
-                         00.95.69h4.163c.969 0 1.371 1.24.588 1.81l-3.371 2.455a1 1 0
-                         00-.363 1.118l1.287 3.955c.3.921-.755 1.688-1.538
-                         1.118l-3.371-2.455a1 1 0 00-1.176 0l-3.371
-                         2.455c-.783.57-1.838-.197-1.538-1.118l1.287-3.955a1 1
-                         0 00-.363-1.118L2.07 9.382c-.783-.57-.38-1.81.588-1.81h4.163a1
-                         1 0 00.95-.69l1.286-3.955z" />
-            </svg>
-            <svg class="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.955a1 1 0
-                         00.95.69h4.163c.969 0 1.371 1.24.588 1.81l-3.371 2.455a1 1 0
-                         00-.363 1.118l1.287 3.955c.3.921-.755 1.688-1.538
-                         1.118l-3.371-2.455a1 1 0 00-1.176 0l-3.371
-                         2.455c-.783.57-1.838-.197-1.538-1.118l1.287-3.955a1 1
-                         0 00-.363-1.118L2.07 9.382c-.783-.57-.38-1.81.588-1.81h4.163a1
-                         1 0 00.95-.69l1.286-3.955z" />
-            </svg>
-            <svg class="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.955a1 1 0
-                         00.95.69h4.163c.969 0 1.371 1.24.588 1.81l-3.371 2.455a1 1 0
-                         00-.363 1.118l1.287 3.955c.3.921-.755 1.688-1.538
-                         1.118l-3.371-2.455a1 1 0 00-1.176 0l-3.371
-                         2.455c-.783.57-1.838-.197-1.538-1.118l1.287-3.955a1 1
-                         0 00-.363-1.118L2.07 9.382c-.783-.57-.38-1.81.588-1.81h4.163a1
-                         1 0 00.95-.69l1.286-3.955z" />
-            </svg>
-            <svg class="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.955a1 1 0
-                         00.95.69h4.163c.969 0 1.371 1.24.588 1.81l-3.371 2.455a1 1 0
-                         00-.363 1.118l1.287 3.955c.3.921-.755 1.688-1.538
-                         1.118l-3.371-2.455a1 1 0 00-1.176 0l-3.371
-                         2.455c-.783.57-1.838-.197-1.538-1.118l1.287-3.955a1 1
-                         0 00-.363-1.118L2.07 9.382c-.783-.57-.38-1.81.588-1.81h4.163a1
-                         1 0 00.95-.69l1.286-3.955z" />
-            </svg>
-            <svg class="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.955a1 1 0
-                         00.95.69h4.163c.969 0 1.371 1.24.588 1.81l-3.371 2.455a1 1 0
-                         00-.363 1.118l1.287 3.955c.3.921-.755 1.688-1.538
-                         1.118l-3.371-2.455a1 1 0 00-1.176 0l-3.371
-                         2.455c-.783.57-1.838-.197-1.538-1.118l1.287-3.955a1 1
-                         0 00-.363-1.118L2.07 9.382c-.783-.57-.38-1.81.588-1.81h4.163a1
-                         1 0 00.95-.69l1.286-3.955z" />
-            </svg>
-          </div>
-          <div class="flex space-x-1 mb-4">
-           
+            <!-- 5 étoiles -->
+            <svg class="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049..."/></svg>
+            <svg class="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049..."/></svg>
+            <svg class="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049..."/></svg>
+            <svg class="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049..."/></svg>
+            <svg class="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049..."/></svg>
           </div>
           <blockquote class="text-gray-600">
-            On est vraiment satisfait de votre travail de nos deux pages :
-            votre sérieux et vos capacités nous ont convaincus. Note : 10/10.
+            Travailler avec Amine Rouchiche, c’est avancer avec quelqu’un qui maîtrise vraiment son sujet :
+            SEO, SEA, Ads, stratégie web… tout est carré, clair et orienté résultats.
+            Un vrai partenaire de confiance que je recommande les yeux fermés.
           </blockquote>
         </figure>
-
-        <!-- Témoignage 3: Rabah Ghiles -->
+  
+        <!-- Témoignage 3: Boubekeur OUIDDIR -->
         <figure
           class="bg-gray-50 rounded-lg p-8 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-24 h-24 text-gray-300 mb-4" fill="currentColor"
-            viewBox="0 0 24 24">
-            <path
-              d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.4c-3.3 0-9.8 1.7-9.8 5v2.4h19.6v-2.4c0-3.3-6.5-5-9.8-5z" />
-          </svg>
-          <figcaption class="font-bold text-lg">Rabah Ghiles</figcaption>
-          <p class="text-sm text-gray-500 mb-2">Développeur Front React</p>
-          <!-- 5 Étoiles -->
+          <!-- Logo entreprise t3 -->
+          <img src="images/t2.png" alt="Logo EROE" 
+               class="mb-4 p-2 w-[300px] h-[170px]" />
+          <figcaption class="font-bold text-lg">Boubekeur OUIDDIR</figcaption>
+          <p class="text-sm text-gray-500 mb-2">Directeur Commercial chez EROE</p>
           <div class="flex space-x-1 mb-4">
-            <!-- Heroicons Star Solid -->
-            <svg class="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.955a1 1 0
-                         00.95.69h4.163c.969 0 1.371 1.24.588 1.81l-3.371 2.455a1 1 0
-                         00-.363 1.118l1.287 3.955c.3.921-.755 1.688-1.538
-                         1.118l-3.371-2.455a1 1 0 00-1.176 0l-3.371
-                         2.455c-.783.57-1.838-.197-1.538-1.118l1.287-3.955a1 1
-                         0 00-.363-1.118L2.07 9.382c-.783-.57-.38-1.81.588-1.81h4.163a1
-                         1 0 00.95-.69l1.286-3.955z" />
-            </svg>
-            <svg class="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.955a1 1 0
-                         00.95.69h4.163c.969 0 1.371 1.24.588 1.81l-3.371 2.455a1 1 0
-                         00-.363 1.118l1.287 3.955c.3.921-.755 1.688-1.538
-                         1.118l-3.371-2.455a1 1 0 00-1.176 0l-3.371
-                         2.455c-.783.57-1.838-.197-1.538-1.118l1.287-3.955a1 1
-                         0 00-.363-1.118L2.07 9.382c-.783-.57-.38-1.81.588-1.81h4.163a1
-                         1 0 00.95-.69l1.286-3.955z" />
-            </svg>
-            <svg class="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.955a1 1 0
-                         00.95.69h4.163c.969 0 1.371 1.24.588 1.81l-3.371 2.455a1 1 0
-                         00-.363 1.118l1.287 3.955c.3.921-.755 1.688-1.538
-                         1.118l-3.371-2.455a1 1 0 00-1.176 0l-3.371
-                         2.455c-.783.57-1.838-.197-1.538-1.118l1.287-3.955a1 1
-                         0 00-.363-1.118L2.07 9.382c-.783-.57-.38-1.81.588-1.81h4.163a1
-                         1 0 00.95-.69l1.286-3.955z" />
-            </svg>
-            <svg class="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.955a1 1 0
-                         00.95.69h4.163c.969 0 1.371 1.24.588 1.81l-3.371 2.455a1 1 0
-                         00-.363 1.118l1.287 3.955c.3.921-.755 1.688-1.538
-                         1.118l-3.371-2.455a1 1 0 00-1.176 0l-3.371
-                         2.455c-.783.57-1.838-.197-1.538-1.118l1.287-3.955a1 1
-                         0 00-.363-1.118L2.07 9.382c-.783-.57-.38-1.81.588-1.81h4.163a1
-                         1 0 00.95-.69l1.286-3.955z" />
-            </svg>
-            <svg class="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.955a1 1 0
-                         00.95.69h4.163c.969 0 1.371 1.24.588 1.81l-3.371 2.455a1 1 0
-                         00-.363 1.118l1.287 3.955c.3.921-.755 1.688-1.538
-                         1.118l-3.371-2.455a1 1 0 00-1.176 0l-3.371
-                         2.455c-.783.57-1.838-.197-1.538-1.118l1.287-3.955a1 1
-                         0 00-.363-1.118L2.07 9.382c-.783-.57-.38-1.81.588-1.81h4.163a1
-                         1 0 00.95-.69l1.286-3.955z" />
-            </svg>
-          </div>
-          <div class="flex space-x-1 mb-4">
-           
-            
-            
+            <!-- 5 étoiles -->
+            <svg class="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049..."/></svg>
+            <svg class="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049..."/></svg>
+            <svg class="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049..."/></svg>
+            <svg class="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049..."/></svg>
+            <svg class="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049..."/></svg>
           </div>
           <blockquote class="text-gray-600">
-            J'étais sous la responsabilité d’Amine lors de mon stage :
-            ses conseils m'ont permis de progresser et de réussir mes missions.
+            Amine a toujours répondu présent par son talent et nous aider a digitalisé notre enseigne avec brio, beaucoup d'idées et un esprit de synthèse et de conseil que nous apprécions.
+            Ah oui sans oublié son intelligence émotionnelle oh combien importante lorsqu'il nous a accompagné dans nos divers projets. 
+            Nous le recommandons vivement.
           </blockquote>
         </figure>
-
+  
       </div>
     </div>
   </section>
+  
+  
 
 
   <!-- Accompagnement Section -->
-  <section id="accompagnement" class="relative overflow-hidden py-20 bg-teal-500 text-white">
-    <!-- Formes animées en arrière-plan -->
-    <div class="absolute -top-20 -left-20 w-72 h-72 bg-white opacity-10 rounded-full animate-pulse"></div>
-    <div class="absolute bottom-0 right-0 w-56 h-56 bg-white opacity-20 rounded-full animate-pulse delay-1000"></div>
+  <section
+  id="accompagnement"
+  class="relative overflow-hidden py-20 bg-[#00b9ad] text-white"
+>
+  <!-- Animated logo-bg “shapes” -->
+  <div
+    class="absolute  w-72 h-72 animate-pulse"
+  >
+    <img
+      src="images/logobg_black.png"
+      alt=""
+      class="w-full h-full object-cover opacity-10 rounded-full"
+    />
+  </div>
+  <div
+    class="absolute bottom-0 right-0 w-56 h-56 animate-pulse delay-1000"
+  >
+    <img
+      src="images/logobg_black.png"
+      alt=""
+      class="w-full h-full object-cover opacity-20 rounded-full"
+    />
+  </div>
 
-    <div class="container mx-auto px-4">
-      <!-- Titre -->
-      <div class="text-center mb-16" data-aos="fade-down">
-        <h2 class="text-3xl md:text-4xl font-extrabold">
-          Un accompagnement sur lequel vous pouvez compter
-        </h2>
-        <div class="w-20 h-1 bg-white mx-auto mt-4 rounded-full"></div>
-      </div>
+  <div class="container mx-auto px-4">
+    <!-- Titre -->
+    <div class="text-center mb-16" data-aos="fade-down">
+      <h2 class="text-3xl md:text-4xl font-extrabold">
+        Un accompagnement sur lequel vous pouvez compter
+      </h2>
+      <div class="w-20 h-1 bg-white mx-auto mt-4 rounded-full"></div>
+    </div>
 
-      <!-- Texte d’intro -->
-      <div class="max-w-3xl mx-auto text-center mb-12" data-aos="fade-up">
-        <p class="text-lg leading-relaxed">
-          Chez Smarteam, notre priorité est de créer un véritable partenariat de confiance.
-          Nous vous guidons, du conseil stratégique à la réalisation technique,
-          pour que votre site devienne un outil puissant de visibilité et de conversion.
+    <!-- Texte d’intro -->
+    <div class="max-w-3xl mx-auto text-center mb-12" data-aos="fade-up">
+      <p class="text-lg leading-relaxed">
+        Chez Smarteam, notre priorité est de créer un véritable partenariat de
+        confiance. Nous vous guidons, du conseil stratégique à la réalisation
+        technique, pour que votre site devienne un outil puissant de visibilité
+        et de conversion.
+      </p>
+    </div>
+
+    <!-- Grille des services -->
+    <div
+      class="grid grid-cols-1 md:grid-cols-3 gap-8"
+      data-aos="fade-up"
+      data-aos-delay="200"
+    >
+      <!-- Carte 1 -->
+      <div
+        class="flex flex-col items-center text-center bg-white bg-opacity-10 p-8 rounded-lg hover:bg-opacity-20 transition"
+      >
+        <div
+          class="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-4"
+        >
+          <!-- conseil icon -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-8 h-8 text-teal-500"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+            />
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Conseil stratégique</h3>
+        <p class="flex-1 mb-4">
+          Analyse personnalisée de votre marché et définition d’une feuille de
+          route digitale sur-mesure.
         </p>
       </div>
 
-      <!-- Grille des services -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8" data-aos="fade-up" data-aos-delay="200">
-        <!-- Carte 1 -->
+      <!-- Carte 2 -->
+      <div
+        class="flex flex-col items-center text-center bg-white bg-opacity-10 p-8 rounded-lg hover:bg-opacity-20 transition"
+        data-aos="fade-up"
+        data-aos-delay="300"
+      >
         <div
-          class="flex flex-col items-center text-center bg-white bg-opacity-10 p-8 rounded-lg hover:bg-opacity-20 transition">
-          <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-teal-500" fill="none" viewBox="0 0 24 24"
-              stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707
-                         m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19
-                         a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold mb-2">Conseil stratégique</h3>
-          <p class="flex-1 mb-4">
-            Analyse personnalisée de votre marché et définition d’une feuille de route digitale sur-mesure.
-          </p>
+          class="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-4"
+        >
+          <!-- dev icon -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-8 h-8 text-teal-500"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
+            />
+          </svg>
         </div>
-
-        <!-- Carte 2 -->
-        <div
-          class="flex flex-col items-center text-center bg-white bg-opacity-10 p-8 rounded-lg hover:bg-opacity-20 transition"
-          data-aos="fade-up" data-aos-delay="300">
-          <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-teal-500" fill="none" viewBox="0 0 24 24"
-              stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8
-                         a2 2 0 00-2 2v14a2 2 0 002 2z" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold mb-2">Conception & Développement</h3>
-          <p class="flex-1 mb-4">
-            Création de sites performants, UX optimisée et code robuste pour garantir rapidité et fiabilité.
-          </p>
-        </div>
-
-        <!-- Carte 3 -->
-        <div
-          class="flex flex-col items-center text-center bg-white bg-opacity-10 p-8 rounded-lg hover:bg-opacity-20 transition"
-          data-aos="fade-up" data-aos-delay="400">
-          <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-teal-500" fill="none" viewBox="0 0 24 24"
-              stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold mb-2">Support & Évolution</h3>
-          <p class="flex-1 mb-4">
-            Maintenance proactive et évolutions régulières pour que votre site reste toujours à la pointe.
-          </p>
-        </div>
+        <h3 class="text-xl font-semibold mb-2">Conception & Développement</h3>
+        <p class="flex-1 mb-4">
+          Création de sites performants, UX optimisée et code robuste pour garantir
+          rapidité et fiabilité.
+        </p>
       </div>
 
-      <!-- CTA -->
-      <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="500">
-        <a href="#contact"
-          class="inline-block bg-white text-teal-500 font-medium px-8 py-3 rounded-full shadow-md hover:shadow-lg transition">
-          Discutons de votre projet
-        </a>
+      <!-- Carte 3 -->
+      <div
+        class="flex flex-col items-center text-center bg-white bg-opacity-10 p-8 rounded-lg hover:bg-opacity-20 transition"
+        data-aos="fade-up"
+        data-aos-delay="400"
+      >
+        <div
+          class="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-4"
+        >
+          <!-- support icon -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-8 h-8 text-teal-500"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 10V3L4 14h7v7l9-11h-7z"
+            />
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Support & Évolution</h3>
+        <p class="flex-1 mb-4">
+          Maintenance proactive et évolutions régulières pour que votre site reste
+          toujours à la pointe.
+        </p>
       </div>
     </div>
 
-  </section>
+   
+  </div>
+</section>
+
 
 
 
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-white py-12">
+  <footer class="bg-gray-900 text-white py-12 font-utendo">
     <div class="container mx-auto px-4 text-center space-y-6">
       <!-- Logo centré -->
       <img
@@ -864,12 +897,21 @@
   </footer>
   
   
+  <!-- Floating “Consultez notre expert” button -->
+  <a
+  href="#contact"
+  class="fixed bottom-6 right-24 z-50 bg-[#00b9ad] text-white font-medium
+         px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out
+         focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#00b9ad]"
+>
+  Consultez notre expert
+</a>
 
 
  
   <!-- Back to top button -->
   <button id="back-to-top" aria-label="Retour en haut"
-    class="fixed bottom-6 right-6 z-50 bg-teal-500 text-white p-3 rounded-full shadow-lg
+    class="fixed bottom-6 right-6 z-50 bg-[#00b9ad] text-white p-3 rounded-full shadow-lg
        opacity-0 translate-y-4 invisible transition-all duration-300 ease-in-out
        hover:scale-110 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-teal-500">
     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
