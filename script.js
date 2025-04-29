@@ -21,48 +21,56 @@ document.addEventListener("DOMContentLoaded", function () {
           t.classList.contains("hidden") || t.classList.add("hidden"));
       });
     });
-  const o = document.getElementById("contact-form");
-  o &&
-    o.addEventListener("submit", function (e) {
-      e.preventDefault();
-      const t = new FormData(o),
-        n = {};
-      t.forEach((e, t) => {
-        n[t] = e;
-      }),
-        Swal.fire({
-          title: "Envoi en cours...",
-          text: "Merci de patienter pendant l’envoi de votre message.",
-          allowOutsideClick: !1,
-          didOpen: () => {
-            Swal.showLoading();
-          },
-        }),
-        emailjs
-          .sendForm("service_de7cpil", "template_07hwe8c", o)
-          .then(() => {
-            Swal.fire({
-              title: "Merci pour votre message !",
-              text: "Nous vous contacterons très rapidement.",
-              icon: "success",
-              showConfirmButton: !1,
-              timer: 3e3,
-              timerProgressBar: !0,
-            });
-          })
-          .catch((e) => {
-            console.error("Erreur EmailJS:", e),
-              Swal.fire({
-                title: "Erreur",
-                text: "Une erreur est survenue lors de l’envoi du message.",
-                icon: "error",
-                confirmButtonColor: "#ef4444",
-              });
-          })
-          .finally(() => {
-            o.reset();
-          });
+  // 1. Sélectionnez les deux formulaires grâce à un sélecteur multiple
+const forms = document.querySelectorAll('#contact-form, #contact-form-mobile');
+
+// 2. Parcourez chaque formulaire et attachez-y le même handler
+forms.forEach((form) => {
+  if (!form) return; // protection au cas où l'élément n'existe pas
+
+  form.addEventListener('submit', function (e) {
+    // 3. Empêchez la soumission classique du formulaire
+    e.preventDefault(); // :contentReference[oaicite:4]{index=4}
+
+    // 4. Affichez la boîte de dialogue "Envoi en cours..."
+    Swal.fire({
+      title: 'Envoi en cours...',
+      text: 'Merci de patienter pendant l’envoi de votre message.',
+      allowOutsideClick: false,
+      didOpen: () => Swal.showLoading(), // :contentReference[oaicite:5]{index=5}
     });
+
+    // 5. Envoyez le formulaire via EmailJS
+    emailjs
+      .sendForm('service_de7cpil', 'template_07hwe8c', form) // :contentReference[oaicite:6]{index=6}
+      .then(() => {
+        // 6.a. Succès
+        Swal.fire({
+          title: 'Merci pour votre message !',
+          text: 'Nous vous contacterons très rapidement.',
+          icon: 'success',
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true,
+        });
+      })
+      .catch((error) => {
+        // 6.b. Erreur
+        console.error('Erreur EmailJS :', error);
+        Swal.fire({
+          title: 'Erreur',
+          text: 'Une erreur est survenue lors de l’envoi du message.',
+          icon: 'error',
+          confirmButtonColor: '#ef4444',
+        });
+      })
+      .finally(() => {
+        // 7. Réinitialisez le formulaire concerné
+        form.reset(); // :contentReference[oaicite:7]{index=7}
+      });
+  });
+});
+
   const i = document.querySelectorAll(".counter");
   let r = !1;
   function s() {
