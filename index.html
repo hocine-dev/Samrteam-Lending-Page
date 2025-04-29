@@ -10,10 +10,7 @@
     <meta name="theme-color" content="#00B2A9" />
   
 
- <!-- thief  CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.2/color-thief.umd.js"
-    integrity="sha512-HNQzQGv8BLnYRfFcn4tcP26kkFaspsyJIKaf/22ybXQZBVZsajC08wWw/h3f6rmmB2+GXrTNxzSb0FICXgX3Lw=="
-    crossorigin="anonymous"></script>
+
 
 
     <!-- Tailwind CSS CDN -->
@@ -21,16 +18,21 @@
     <script>
         tailwind.config = {
             theme: {
-                extend: {
-                    colors: {
-                        teal: {
-                            500: '#00B2A9',
-                            600: '#009992',
-                            700: '#008880',
-                        }
-                    },
-                    fontFamily: { utendo: ['Utendo', 'sans-serif'] },
-                }
+          extend: {
+              colors: {
+            teal: {
+                500: '#00B2A9',
+                600: '#009992',
+                700: '#008880',
+            }
+              },
+              spacing: {
+            '40r': '10rem'
+              },
+              fontFamily: {
+            utendo: ['Utendo', 'sans-serif']
+              }
+          }
             }
         }
     </script>
@@ -76,25 +78,25 @@
     <nav class="hidden md:flex space-x-8">
       <a
         href="#pourquoi-nous"
-        class="text-gray-700 hover:text-[#00b9ad] transition-colors"
+        class="text-gray-700 hover:text-[#00b9ad] transition-colors text-sm font-medium uppercase"
       >
         Pourquoi nous
       </a>
       <a
-        href="#realitions"
-        class="text-gray-700 hover:text-[#00b9ad] transition-colors"
+        href="#realisations"
+        class="text-gray-700 hover:text-[#00b9ad] transition-colors text-sm font-medium uppercase"
       >
         Réalisations
       </a>
       <a
         href="#accompagnement"
-        class="text-gray-700 hover:text-[#00b9ad] transition-colors"
+        class="text-gray-700 hover:text-[#00b9ad] transition-colors text-sm font-medium uppercase"
       >
         Accompagnement
       </a>
       <a
-        href="#contact"
-        class="text-gray-700 hover:text-[#00b9ad] transition-colors"
+        href="#form"
+        class="text-gray-700 hover:text-[#00b9ad] transition-colors text-sm font-medium uppercase"
       >
         Contact
       </a>
@@ -102,7 +104,7 @@
 
     <!-- Bouton Desktop -->
     <a
-      href="#contact"
+      href="#form"
       class="hidden md:block bg-[#00b9ad] hover:bg-opacity-90 text-white font-medium px-6 py-2 rounded-md transition-colors"
     >
     Consultez notre expert    </a>
@@ -152,13 +154,13 @@
         Accompagnement
       </a>
       <a
-        href="#contact"
+        href="#form"
         class="text-gray-700 hover:text-[#00b9ad] transition-colors"
       >
         Contact
       </a>
       <a
-        href="#contact"
+        href="#form"
         class="bg-[#00b9ad] hover:bg-opacity-90 text-white font-medium px-6 py-2 rounded-md transition-colors text-center"
       >
       Consultez notre expert
@@ -167,163 +169,122 @@
   </div>
 </header>
 
+<!-- Hero Section avec formulaire en chevauchement -->
+<div class="relative hidden md:block">
   <!-- Hero Section -->
-  <section class="pt-32 pb-20 bg-gradient-to-br from-gray-50 to-gray-100 font-utendo" id="hero">
-    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
-      <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
-        <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-          Votre site web doit <span class="text-teal-500">travailler pour vous</span>
+  <section id="hero" class="relative min-h-[600px] flex items-center pt-20 pb-32 font-utendo">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0 z-0">
+      <img src="images/bg.jpeg" alt="Background" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-gradient-to-r from-gray-900/90 to-gray-800/80"></div>
+    </div>
+    
+    <!-- Content Container -->
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl">
+        <!-- Main Heading -->
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+          Votre site web doit <span class="text-[#00b9ad]">travailler pour vous</span>
         </h1>
-        <p class="text-lg text-gray-600 mb-8">
-          Depuis <span class="font-extrabold text-teal-500">plus de 13 ans</span>, nous aidons les entreprises à se
-          faire connaître et à attirer de nouveaux clients grâce à des sites web performants. Chez Smarteam, nous
-          croyons qu'un site n'est pas qu'une vitrine : c'est un véritable levier d'acquisition, pensé pour convertir et
-          faire grandir votre business.
+        
+        <!-- Paragraph Text -->
+        <p class="text-lg md:text-xl text-gray-200 mb-6 max-w-2xl">
+          Depuis <span class="font-extrabold text-[#00b9ad]">plus de 13 ans</span>, nous aidons les entreprises à se
+          faire connaître et à attirer de nouveaux clients grâce à des sites web performants.
         </p>
-      
-      </div>
-      <div class="md:w-1/2 relative flex justify-center">
-        <div
-          class="bg-white p-6 rounded-full shadow-xl transform hover:scale-105 transition-transform duration-300 relative">
-          <img  src="images/hero.png" alt="Smarteam Digital Consulting" class="rounded-full w-full h-auto">
-          <div
-            class="absolute top-4 right-4 bg-gradient-to-br from-teal-500 to-blue-600 text-white p-4 rounded-full shadow-lg ring-4 ring-white">
-            <p class="font-bold text-3xl">+13</p>
-            <p class="text-xs uppercase tracking-wide">ans d'expertise</p>
-          </div>
-        </div>
+        
+        <p class="text-gray-300 max-w-2xl">
+          Chez Smarteam, nous croyons qu'un site n'est pas qu'une vitrine : c'est un véritable levier d'acquisition, 
+          pensé pour convertir et faire grandir votre business.
+        </p>
       </div>
     </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="py-20 bg-gray-50 font-utendo">
-
-    <div class="container mx-auto px-4">
-      <!-- En-tête -->
-      <div class="text-center mb-16" data-aos="fade-down">
-        <h2 class="text-3xl md:text-4xl font-bold">Discutons ensemble de votre projet !</h2>
-        <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
-          Remplissez ce formulaire, nous vous recontacterons rapidement avec une solution sur mesure.
-        </p>
-        <div class="w-20 h-1 bg-[#00b9ad] mx-auto mt-6 rounded-full"></div>
-      </div>
-
-      <!-- Grille 1/3 – 2/3 -->
-      <div class="grid md:grid-cols-3 gap-8 items-stretch max-w-5xl mx-auto bg-white rounded-lg shadow-md p-8"
-        data-aos="fade-up">
-
-        <!-- Coordonnées (1/3) -->
-        <div class="order-2 md:order-1 flex flex-col justify-center space-y-6">
-          <h3 class="text-2xl font-semibold text-teal-500">Nos coordonnées</h3>
-          <ul class="space-y-4 text-gray-700 text-sm">
-
-            <!-- Adresse -->
-            <li class="flex items-start gap-3">
-              <!-- Heroicon: Location Marker (solid) -->
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-teal-500 flex-shrink-0" fill="currentColor"
-                viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 2a6 6 0 016 6c0 3.866-6 11-6 11S4 11.866 4 8a6 6 0 016-6zm0
-             8a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
-              </svg>
+    
+    <!-- Formulaire en chevauchement (positionné à droite) -->
+    <div class="absolute bottom-0 right-0 translate-y-2/3 w-full md:w-auto z-20 px-4 md:px-8 md:right-8 lg:right-16 xl:right-[calc(40%-500px)]">
+      <div class="bg-white rounded-xl shadow-xl overflow-hidden max-w-md ml-auto">
+        <div class="p-8">
+          <h3 class="text-2xl font-bold text-gray-800 mb-2">Contactez-nous</h3>
+          <p class="text-gray-500 text-sm mb-6">Nous vous recontacterons rapidement</p>
+          
+          <form id="contact-form" class="space-y-5">
+            <!-- Champs Nom et Prénom (2 colonnes) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <!-- Prénom -->
               <div>
-                <p class="font-medium">Adresse</p>
-                <p>7 Rue des Frères Slimani,<br />Tizi Ouzou 15000</p>
+                <input 
+                  type="text" 
+                  id="first_name" 
+                  name="first_name" 
+                  placeholder="Prénom" 
+                  required
+                  class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#00b9ad] focus:border-[#00b9ad] text-gray-700"
+                />
               </div>
-            </li>
-
-
-
-
-            <!-- Email -->
-            <li class="flex items-start gap-3">
-              <!-- Heroicon: Envelope (solid) -->
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-teal-500 flex-shrink-0" fill="currentColor"
-                viewBox="0 0 20 20">
-                <path d="M2.94 6.94a1.5 1.5 0 011.267-.69h11.586a1.5 1.5 0 011.267.69l-6.775
-             4.518a.5.5 0 01-.584 0L2.94 6.94z" />
-                <path d="M18 8.308V14.5A1.5 1.5 0 0116.5 16h-13A1.5 1.5 0 012 14.5v-6.192l7.308
-             4.875a1.5 1.5 0 001.384 0L18 8.308z" />
-              </svg>
+              
+              <!-- Nom -->
               <div>
-                <p class="font-medium">Email</p>
-                <a href="mailto:contact@smarteam-dz.com" class="underline hover:text-teal-600">
-                  contact@smarteam-dz.com
-                </a>
+                <input 
+                  type="text" 
+                  id="last_name" 
+                  name="last_name" 
+                  placeholder="Nom" 
+                  required
+                  class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#00b9ad] focus:border-[#00b9ad] text-gray-700"
+                />
               </div>
-            </li>
-
-
-
-            <!-- Site Web -->
-            <li class="flex items-start gap-3">
-              <!-- Heroicon: Link -->
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-teal-500 flex-shrink-0" fill="none"
-                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M10 13a5 5 0 007.07 0l3.54-3.54
-             a5 5 0 00-7.07-7.07L10 5.93" />
-                <path stroke-linecap="round" stroke-linejoin="round" d="M14 11a5 5 0 00-7.07 0l-3.54 3.54
-             a5 5 0 007.07 7.07L14 18.07" />
-              </svg>
-              <div>
-                <p class="font-medium">Site Web</p>
-                <a href="https://smarteam-dz.com/" target="_blank" rel="noopener" class="underline hover:text-teal-600">
-                  smarteam-dz.com
-                </a>
-              </div>
-            </li>
-
-
-            <!-- Téléphone -->
-            <li class="flex items-start gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-teal-500 flex-shrink-0" fill="none"
-                viewBox="0 0 24 24" stroke="currentColor">
-                <!-- Heroicon: Phone -->
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21L8.664 11.82a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
-              <div>
-                <p class="font-medium">Téléphone</p>
-                <a href="tel:+213560265502" class="underline hover:text-teal-600">
-                  0560 26 55 02
-                </a>
-              </div>
-            </li>
-          </ul>
-        </div>
-
-
-        <!-- Formulaire (2/3) -->
-        <div class="order-1 md:order-2 md:col-span-2">
-          <form id="contact-form" class="grid grid-cols-1 md:grid-cols-2 gap-6" data-aos="fade-left">
-            <!-- Nom -->
-            <div>
-              <label for="name" class="block mb-1 text-sm font-medium text-gray-700">Nom</label>
-              <input type="text" id="name" name="name" required
-                class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500" />
             </div>
+            
             <!-- Email -->
             <div>
-              <label for="email" class="block mb-1 text-sm font-medium text-gray-700">Email</label>
-              <input type="email" id="email" name="email" required
-                class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500" />
+              <div class="relative">
+                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  placeholder="Votre email" 
+                  required
+                  class="w-full pl-10 px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#00b9ad] focus:border-[#00b9ad] text-gray-700"
+                />
+              </div>
             </div>
-            <!-- Téléphone -->
+            
+            <!-- Téléphone avec Code Pays -->
             <div>
-              <label for="phone" class="block mb-1 text-sm font-medium text-gray-700">Téléphone</label>
-              <input type="tel" id="phone" name="phone" required
-                class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500" />
+              <div class="flex">
+                <div class="flex-shrink-0">
+                  <select 
+                    id="country_code" 
+                    name="country_code"
+                    class="h-full py-3 px-2 border border-gray-200 bg-gray-50 rounded-l-lg text-gray-500 text-sm focus:outline-none focus:ring-1 focus:ring-[#00b9ad] focus:border-[#00b9ad]"
+                  >
+                    <option value="+213">+213</option>
+                    <option value="+33">+33</option>
+                    <option value="+1">+1</option>
+                  </select>
+                </div>
+                <input 
+                  type="tel" 
+                  id="phone" 
+                  name="phone" 
+                  placeholder="Numéro de téléphone" 
+                  required
+                  class="w-full px-4 py-3 border border-gray-200 rounded-r-lg focus:outline-none focus:ring-1 focus:ring-[#00b9ad] focus:border-[#00b9ad] text-gray-700 border-l-0"
+                />
+              </div>
             </div>
-            <!-- Message -->
-            <div class="md:col-span-2">
-              <label for="message" class="block mb-1 text-sm font-medium text-gray-700">Message (facultatif)</label>
-              <textarea id="message" name="message" rows="4"
-                class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"></textarea>
-            </div>
-            <!-- Bouton -->
-            <div class="md:col-span-2">
-              <button type="submit"
-                class="w-full py-3 bg-[#00b9ad] hover:bg-[#00b9ad] text-white font-semibold rounded-lg shadow transition-transform transform hover:scale-105">
+            
+            <!-- Bouton d'envoi -->
+            <div class="pt-2">
+              <button 
+                type="submit"
+                class="w-full py-3 bg-[#00b9ad] hover:bg-[#009d93] text-white font-medium rounded-lg transition-colors duration-200"
+              >
                 Je souhaite être contacté
               </button>
             </div>
@@ -332,6 +293,289 @@
       </div>
     </div>
   </section>
+
+  <!-- Section Contact (séparée du formulaire) -->
+  <section id="contact" class="pt-32 pb-20 bg-[#eef4ff] font-utendo relative">
+    <div class="absolute  top-40r left-10 w-1/2  rounded-br-3xl p-8 md:p-10 transform -translate-y-1/4">
+      <div class="max-w-xl mx-auto">
+        <!-- Colonne Gauche - Informations de Contact -->
+        <div class="w-full">
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">Discutons ensemble de votre projet !</h2>
+          <p class="text-gray-600 mb-8">
+            Remplissez ce formulaire, nous vous recontacterons rapidement avec une solution sur mesure.
+          </p>
+          
+          <!-- Coordonnées en grille -->
+          <div class="grid grid-cols-1 md:grid-cols-2  p-6 bg-white rounded-lg shadow-sm">
+            <!-- Email -->
+            <div class="flex items-start gap-4 group transition-all duration-300 p-3 hover:bg-gray-50 rounded-lg">
+              <div class="text-[#00b9ad] mt-1 group-hover:scale-110 transition-transform duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail">
+                  <rect width="20" height="16" x="2" y="4" rx="2"/>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
+              </div>
+              <div>
+                <p class="font-medium text-gray-800 mb-1">Email</p>
+                <a href="mailto:contact@smarteam-dz.com" class="text-[#00b9ad] hover:underline transition-all duration-300">
+                  contact@smarteam-dz.com
+                </a>
+              </div>
+            </div>
+            
+            <!-- Téléphone -->
+            <div class="flex items-start gap-4 group transition-all duration-300 p-3 hover:bg-gray-50 rounded-lg">
+              <div class="text-[#00b9ad] mt-1 group-hover:scale-110 transition-transform duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </div>
+              <div>
+                <p class="font-medium text-gray-800 mb-1">Téléphone</p>
+                <a href="tel:+213560265502" class="text-gray-700 hover:text-[#00b9ad] transition-colors duration-300">
+                  0560 26 55 02
+                </a>
+              </div>
+            </div>
+            
+            <!-- Adresse -->
+            <div class="flex items-start gap-4 group transition-all duration-300 p-3 hover:bg-gray-50 rounded-lg">
+              <div class="text-[#00b9ad] mt-1 group-hover:scale-110 transition-transform duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
+              <div>
+                <p class="font-medium text-gray-800 mb-1">Adresse</p>
+                <p class="text-gray-700">7 Rue des Frères Slimani,<br>Tizi Ouzou 15000</p>
+              </div>
+            </div>
+            
+            <!-- Site Web -->
+            <div class="flex items-start gap-4 group transition-all duration-300 p-3 hover:bg-gray-50 rounded-lg">
+              <div class="text-[#00b9ad] mt-1 group-hover:scale-110 transition-transform duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe">
+                  <circle cx="12" cy="12" r="10"/>
+                  <line x1="2" x2="22" y1="12" y2="12"/>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
+              </div>
+              <div>
+                <p class="font-medium text-gray-800 mb-1">Site Web</p>
+                <a href="https://smarteam-dz.com/" target="_blank" rel="noopener" class="text-gray-700 hover:text-[#00b9ad] transition-colors duration-300">
+                  smarteam-dz.com
+                </a>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    
+    <!-- Contenu vide pour maintenir l'espace dans la page -->
+    <div class="container mx-auto px-4 md:px-8 h-64"></div>
+  </section>
+</div>
+
+  <!-- MOBILE VERSION - Visible only on mobile (sm and below) -->
+  <div class="md:hidden relative">
+    <!-- Hero Section Mobile -->
+    <section id="hero-mobile" class="relative min-h-[500px] flex items-center pt-16 pb-32 font-utendo">
+      <!-- Background Image with Overlay -->
+      <div class="absolute inset-0 z-0">
+        <img src="/placeholder.svg?height=600&width=800" alt="Background" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-b from-gray-900/90 to-gray-800/80"></div>
+      </div>
+      
+      <!-- Content Container -->
+      <div class="container mx-auto px-4 relative z-10 py-6">
+        <div class="max-w-full">
+          <!-- Main Heading -->
+          <h1 class="text-3xl font-bold text-white mb-6 leading-tight">
+            Votre site web doit <span class="text-[#00b9ad]">travailler pour vous</span>
+          </h1>
+          
+          <!-- Paragraph Text -->
+          <p class="text-base text-gray-200 mb-6">
+            Depuis <span class="font-extrabold text-[#00b9ad]">plus de 13 ans</span>, nous aidons les entreprises à se
+            faire connaître et à attirer de nouveaux clients grâce à des sites web performants.
+          </p>
+          
+          <p class="text-gray-300 mb-8">
+            Chez Smarteam, nous croyons qu'un site n'est pas qu'une vitrine : c'est un véritable levier d'acquisition, 
+            pensé pour convertir et faire grandir votre business.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formulaire en chevauchement pour mobile -->
+    <div class="relative z-20 px-4 -mt-24">
+      <div class="bg-white rounded-xl shadow-xl overflow-hidden">
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-gray-800 mb-2">Contactez-nous</h3>
+          <p class="text-gray-500 text-sm mb-5">Nous vous recontacterons rapidement</p>
+          
+          <form id="contact-form-mobile" class="space-y-4">
+            <!-- Champs Nom et Prénom (1 colonne sur mobile) -->
+            <div>
+              <input 
+                type="text" 
+                id="first_name_mobile" 
+                name="first_name" 
+                placeholder="Prénom" 
+                required
+                class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#00b9ad] focus:border-[#00b9ad] text-gray-700 mb-4"
+              />
+            </div>
+            
+            <div>
+              <input 
+                type="text" 
+                id="last_name_mobile" 
+                name="last_name" 
+                placeholder="Nom" 
+                required
+                class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#00b9ad] focus:border-[#00b9ad] text-gray-700"
+              />
+            </div>
+            
+            <!-- Email -->
+            <div>
+              <div class="relative">
+                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <input 
+                  type="email" 
+                  id="email_mobile" 
+                  name="email" 
+                  placeholder="Votre email" 
+                  required
+                  class="w-full pl-10 px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#00b9ad] focus:border-[#00b9ad] text-gray-700"
+                />
+              </div>
+            </div>
+            
+            <!-- Téléphone avec Code Pays -->
+            <div>
+              <div class="flex">
+                <div class="flex-shrink-0">
+                  <select 
+                    id="country_code_mobile" 
+                    name="country_code"
+                    class="h-full py-3 px-2 border border-gray-200 bg-gray-50 rounded-l-lg text-gray-500 text-sm focus:outline-none focus:ring-1 focus:ring-[#00b9ad] focus:border-[#00b9ad]"
+                  >
+                    <option value="+213">+213</option>
+                    <option value="+33">+33</option>
+                    <option value="+1">+1</option>
+                  </select>
+                </div>
+                <input 
+                  type="tel" 
+                  id="phone_mobile" 
+                  name="phone" 
+                  placeholder="Numéro de téléphone" 
+                  required
+                  class="w-full px-4 py-3 border border-gray-200 rounded-r-lg focus:outline-none focus:ring-1 focus:ring-[#00b9ad] focus:border-[#00b9ad] text-gray-700 border-l-0"
+                />
+              </div>
+            </div>
+            
+            <!-- Bouton d'envoi -->
+            <div class="pt-2">
+              <button 
+                type="submit"
+                class="w-full py-3 bg-[#00b9ad] hover:bg-[#009d93] text-white font-medium rounded-lg transition-colors duration-200"
+              >
+                Je souhaite être contacté
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Info Section Mobile -->
+    <section id="contact-info-mobile" class="pt-24 pb-12 px-4 bg-[#eef4ff]">
+      <div class="container mx-auto">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Discutons ensemble de votre projet !</h2>
+        <p class="text-gray-600 mb-8">
+          Remplissez le formulaire, et nous vous recontacterons rapidement avec une solution sur mesure.<br>
+          au contacter nous directement sur :
+        </p>
+        
+        <!-- Coordonnées en liste verticale pour mobile -->
+        <div class="space-y-4 bg-white rounded-lg shadow-sm p-6">
+          <!-- Email -->
+          <div class="flex items-start gap-4 group transition-all duration-300 p-3 hover:bg-gray-50 rounded-lg">
+            <div class="text-[#00b9ad] mt-1 group-hover:scale-110 transition-transform duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail">
+                <rect width="20" height="16" x="2" y="4" rx="2"/>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+              </svg>
+            </div>
+            <div>
+              <p class="font-medium text-gray-800 mb-1">Email</p>
+              <a href="mailto:contact@smarteam-dz.com" class="text-[#00b9ad] hover:underline transition-all duration-300">
+                contact@smarteam-dz.com
+              </a>
+            </div>
+          </div>
+          
+          <!-- Téléphone -->
+          <div class="flex items-start gap-4 group transition-all duration-300 p-3 hover:bg-gray-50 rounded-lg">
+            <div class="text-[#00b9ad] mt-1 group-hover:scale-110 transition-transform duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="font-medium text-gray-800 mb-1">Téléphone</p>
+              <a href="tel:+213560265502" class="text-gray-700 hover:text-[#00b9ad] transition-colors duration-300">
+                0560 26 55 02
+              </a>
+            </div>
+          </div>
+          
+          <!-- Adresse -->
+          <div class="flex items-start gap-4 group transition-all duration-300 p-3 hover:bg-gray-50 rounded-lg">
+            <div class="text-[#00b9ad] mt-1 group-hover:scale-110 transition-transform duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+            <div>
+              <p class="font-medium text-gray-800 mb-1">Adresse</p>
+              <p class="text-gray-700">7 Rue des Frères Slimani,<br>Tizi Ouzou 15000</p>
+            </div>
+          </div>
+          
+          <!-- Site Web -->
+          <div class="flex items-start gap-4 group transition-all duration-300 p-3 hover:bg-gray-50 rounded-lg">
+            <div class="text-[#00b9ad] mt-1 group-hover:scale-110 transition-transform duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" x2="22" y1="12" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="font-medium text-gray-800 mb-1">Site Web</p>
+              <a href="https://smarteam-dz.com/" target="_blank" rel="noopener" class="text-gray-700 hover:text-[#00b9ad] transition-colors duration-300">
+                smarteam-dz.com
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 
 
 
@@ -359,7 +603,7 @@
     <div class="container mx-auto px-4">
       <!-- Titre -->
       <div class="text-center mb-16" data-aos="fade-down">
-        <h2 class="text-3xl md:text-4xl font-extrabold">Pourquoi choisir Smarteam ?</h2>
+        <h2 class="text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-gray-800 to-teal-600">Pourquoi choisir Smarteam ?</h2>
         <div class="w-20 h-1 bg-[#00b9ad] mx-auto mt-4 rounded-full"></div>
       </div>
   
@@ -496,7 +740,7 @@
     <div class="container mx-auto px-4">
       <!-- Titre -->
       <div class="text-center mb-16" data-aos="fade-down">
-        <h2 class="text-3xl md:text-4xl font-extrabold">
+        <h2 class="text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-gray-800 to-teal-600">
           Quelques réalisations qui nous tiennent à cœur
         </h2>
         <div class="w-20 h-1 bg-[#00b9ad] mx-auto mt-4 rounded-full"></div>
@@ -574,90 +818,185 @@
 
 
 
-  <!-- Témoignages Section -->
-  <section id="temoignages" class="py-20 bg-white font-utendo">
-    <div class="container mx-auto px-4">
-      <!-- En-tête -->
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-extrabold">Ce que nos clients disent de nous</h2>
-        <div class="w-20 h-1 bg-[#00b9ad] mx-auto mt-4 rounded-full"></div>
-      </div>
-  
-      <!-- Grille des témoignages -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        
-        <!-- Témoignage 1: Zineb CHAMMA -->
-        <figure
-          class="bg-gray-50 rounded-lg p-8 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center">
-          <!-- Logo entreprise t1 -->
-          <img src="images/t1.webp" alt="Logo Connectics" 
-               class=" mb-4 p-2 w-[300px] h-[170px]" />
-          <figcaption class="font-bold text-lg">Zineb CHAMMA</figcaption>
-          <p class="text-sm text-gray-500 mb-2">Chief Operating Officer at Connectics - Néo-Data</p>
-          <div class="flex space-x-1 mb-4">
-            <!-- 5 étoiles -->
-            <svg class="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049..."/></svg>
-            <svg class="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049..."/></svg>
-            <svg class="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049..."/></svg>
-            <svg class="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049..."/></svg>
-            <svg class="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049..."/></svg>
-          </div>
-          <blockquote class="text-gray-600">
-            J’ai eu le plaisir de collaborer avec Amine sur plusieurs projets,
-            et son professionnalisme ainsi que son expertise ont toujours été au rendez-vous.
-            Il sait allier écoute, réactivité et solutions adaptées aux besoins de ses clients.
-          </blockquote>
-        </figure>
-  
-        <!-- Témoignage 2: Samia Ainceri -->
-        <figure
-          class="bg-gray-50 rounded-lg p-8 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center">
-          <!-- Logo entreprise t2 -->
-          <img src="images/t3.png" alt="Logo AGENCE IMMOBILIERE LA RÉSIDENCE" 
-               class="mb-4 p-2 w-[300px] h-[170px]" />
-          <figcaption class="font-bold text-lg">Samia Ainceri</figcaption>
-            <p class="text-sm text-gray-500 mb-2">chef d'agence immobiliere la résidence</p>
-          <div class="flex space-x-1 mb-4">
-            <!-- 5 étoiles -->
-            <svg class="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049..."/></svg>
-            <svg class="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049..."/></svg>
-            <svg class="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049..."/></svg>
-            <svg class="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049..."/></svg>
-            <svg class="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049..."/></svg>
-          </div>
-          <blockquote class="text-gray-600">
-            Travailler avec Amine Rouchiche, c’est avancer avec quelqu’un qui maîtrise vraiment son sujet :
-            SEO, SEA, Ads, stratégie web… tout est carré, clair et orienté résultats.
-            Un vrai partenaire de confiance que je recommande les yeux fermés.
-          </blockquote>
-        </figure>
-  
-        <!-- Témoignage 3: Boubekeur OUIDDIR -->
-        <figure
-          class="bg-gray-50 rounded-lg p-8 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center">
-          <!-- Logo entreprise t3 -->
-          <img src="images/t2.png" alt="Logo EROE" 
-               class="mb-4 p-2 w-[300px] h-[170px]" />
-          <figcaption class="font-bold text-lg">Boubekeur OUIDDIR</figcaption>
-          <p class="text-sm text-gray-500 mb-2">Directeur Commercial chez EROE</p>
-          <div class="flex space-x-1 mb-4">
-            <!-- 5 étoiles -->
-            <svg class="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049..."/></svg>
-            <svg class="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049..."/></svg>
-            <svg class="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049..."/></svg>
-            <svg class="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049..."/></svg>
-            <svg class="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049..."/></svg>
-          </div>
-          <blockquote class="text-gray-600">
-            Amine a toujours répondu présent par son talent et nous aider a digitalisé notre enseigne avec brio, beaucoup d'idées et un esprit de synthèse et de conseil que nous apprécions.
-            Ah oui sans oublié son intelligence émotionnelle oh combien importante lorsqu'il nous a accompagné dans nos divers projets. 
-            Nous le recommandons vivement.
-          </blockquote>
-        </figure>
-  
-      </div>
+<!-- Témoignages Section -->
+<section id="temoignages" class="py-24 bg-gradient-to-b from-white to-gray-50 font-utendo">
+  <div class="container mx-auto px-4 max-w-7xl">
+    <!-- En-tête avec animation -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-gray-800 to-teal-600">
+        Ce que nos clients disent de nous
+      </h2>
+      <div class="w-24 h-1.5 bg-[#00b9ad] mx-auto mt-6 rounded-full"></div>
     </div>
-  </section>
+
+    <!-- Grille des témoignages avec design moderne -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <!-- Témoignage 1: Zineb CHAMMA -->
+      <div class="group h-full">
+        <div class="relative overflow-hidden rounded-xl shadow-md transition-all duration-300 transform group-hover:-translate-y-2 group-hover:shadow-xl h-full bg-white">
+          <!-- Carte principale -->
+          <div class="p-8 flex flex-col items-center text-center h-full">
+            <!-- Logo en cercle et grayscale -->
+            <div class="mb-6 w-32 h-32 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center">
+              <img src="images/t1.webp" alt="Logo Connectics" 
+                  class="w-24 h-24 object-contain grayscale" />
+            </div>
+            
+            <!-- Séparateur décoratif -->
+            <div class="w-16 h-0.5 bg-[#00b9ad] mb-6"></div>
+            
+            <!-- Info personne -->
+            <div class="mb-4">
+              <h3 class="font-bold text-xl text-gray-800">Zineb CHAMMA</h3>
+              <p class="text-sm text-gray-500 mt-1">Chief Operating Officer at Connectics - Néo-Data</p>
+            </div>
+            
+            <!-- Étoiles -->
+            <div class="flex space-x-1 mb-5">
+              <svg class="w-5 h-5 text-[#00b9ad]" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+              <svg class="w-5 h-5 text-[#00b9ad]" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+              <svg class="w-5 h-5 text-[#00b9ad]" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+              <svg class="w-5 h-5 text-[#00b9ad]" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+              <svg class="w-5 h-5 text-[#00b9ad]" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+            </div>
+            
+            <!-- Citation avec style similaire à l'image -->
+            <div class="relative bg-[#e6f7f6] p-5 rounded-lg">
+              <blockquote class="text-gray-700 italic relative z-10 text-base leading-relaxed">
+                J'ai eu le plaisir de collaborer avec Amine sur plusieurs projets,
+                et son professionnalisme ainsi que son expertise ont toujours été au rendez-vous.
+                Il sait allier écoute, réactivité et solutions adaptées aux besoins de ses clients.
+              </blockquote>
+            </div>
+          </div>
+          
+          <!-- Bordure décorative -->
+          <div class="absolute bottom-0 left-0 right-0 h-1 bg-[#00b9ad]"></div>
+        </div>
+      </div>
+
+      <!-- Témoignage 2: Samia Ainceri -->
+      <div class="group h-full">
+        <div class="relative overflow-hidden rounded-xl shadow-md transition-all duration-300 transform group-hover:-translate-y-2 group-hover:shadow-xl h-full bg-white">
+          <!-- Carte principale -->
+          <div class="p-8 flex flex-col items-center text-center h-full">
+            <!-- Logo en cercle et grayscale -->
+            <div class="mb-6 w-32 h-32 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center">
+              <img src="images/t3.png" alt="Logo AGENCE IMMOBILIERE LA RÉSIDENCE" 
+                  class="w-24 h-24 object-contain grayscale" />
+            </div>
+            
+            <!-- Séparateur décoratif -->
+            <div class="w-16 h-0.5 bg-[#00b9ad] mb-6"></div>
+            
+            <!-- Info personne -->
+            <div class="mb-4">
+              <h3 class="font-bold text-xl text-gray-800">Samia Ainceri</h3>
+              <p class="text-sm text-gray-500 mt-1">Chef d'agence immobilière la résidence</p>
+            </div>
+            
+            <!-- Étoiles -->
+            <div class="flex space-x-1 mb-5">
+              <svg class="w-5 h-5 text-[#00b9ad]" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+              <svg class="w-5 h-5 text-[#00b9ad]" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+              <svg class="w-5 h-5 text-[#00b9ad]" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+              <svg class="w-5 h-5 text-[#00b9ad]" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+              <svg class="w-5 h-5 text-[#00b9ad]" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+            </div>
+            
+            <!-- Citation avec style similaire à l'image -->
+            <div class="relative bg-[#e6f7f6] p-5 rounded-lg">
+              <blockquote class="text-gray-700 italic relative z-10 text-base leading-relaxed">
+                Travailler avec Amine Rouchiche, c'est avancer avec quelqu'un qui maîtrise vraiment son sujet :
+                SEO, SEA, Ads, stratégie web… tout est carré, clair et orienté résultats. Un vrai
+                partenaire de confiance que je recommande les yeux fermés.
+              </blockquote>
+            </div>
+          </div>
+          
+          <!-- Bordure décorative -->
+          <div class="absolute bottom-0 left-0 right-0 h-1 bg-[#00b9ad]"></div>
+        </div>
+      </div>
+
+      <!-- Témoignage 3: Boubekeur OUIDDIR -->
+      <div class="group h-full">
+        <div class="relative overflow-hidden rounded-xl shadow-md transition-all duration-300 transform group-hover:-translate-y-2 group-hover:shadow-xl h-full bg-white">
+          <!-- Carte principale -->
+          <div class="p-8 flex flex-col items-center text-center h-full">
+            <!-- Logo en cercle et grayscale -->
+            <div class="mb-6 w-32 h-32 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center">
+              <img src="images/t2.png" alt="Logo EROE" 
+                  class="w-24 h-24 object-contain grayscale" />
+            </div>
+            
+            <!-- Séparateur décoratif -->
+            <div class="w-16 h-0.5 bg-[#00b9ad] mb-6"></div>
+            
+            <!-- Info personne -->
+            <div class="mb-4">
+              <h3 class="font-bold text-xl text-gray-800">Boubekeur OUIDDIR</h3>
+              <p class="text-sm text-gray-500 mt-1">Directeur Commercial chez EROE</p>
+            </div>
+            
+            <!-- Étoiles -->
+            <div class="flex space-x-1 mb-5">
+              <svg class="w-5 h-5 text-[#00b9ad]" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+              <svg class="w-5 h-5 text-[#00b9ad]" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+              <svg class="w-5 h-5 text-[#00b9ad]" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+              <svg class="w-5 h-5 text-[#00b9ad]" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+              <svg class="w-5 h-5 text-[#00b9ad]" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+            </div>
+            
+            <!-- Citation avec style similaire à l'image -->
+            <div class="relative bg-[#e6f7f6] p-5 rounded-lg">
+              <blockquote class="text-gray-700 italic relative z-10 text-base leading-relaxed">
+                Amine a toujours répondu présent par son talent et nous aider a digitalisé notre enseigne avec brio, beaucoup d'idées et un esprit de synthèse et de conseil que nous apprécions.
+                Ah oui sans oublié son intelligence émotionnelle oh combien importante lorsqu'il nous a accompagné dans nos divers projets. 
+                Nous le recommandons vivement.
+              </blockquote>
+            </div>
+          </div>
+          
+          <!-- Bordure décorative -->
+          <div class="absolute bottom-0 left-0 right-0 h-1 bg-[#00b9ad]"></div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
   
   
 
@@ -898,9 +1237,9 @@
   
   
   <!-- Floating “Consultez notre expert” button -->
-  <a
-  href="#contact"
-  class="fixed bottom-6 right-24 z-50 bg-[#00b9ad] text-white font-medium
+  <a id="expert-button"
+  href="#form"
+  class="fixed bottom-6 right-24 z-50 bg-[#00b9ad] text-white font-medium invisible opacity-0
          px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out
          focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#00b9ad]"
 >
