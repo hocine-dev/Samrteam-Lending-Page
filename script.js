@@ -99,6 +99,12 @@ forms.forEach((form) => {
 }),
   AOS.init({ once: !0, duration: 600 });
 
+  const logoFooter = document.getElementById("logo_footer");
+
+  logoFooter.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
   const backToTopBtn = document.getElementById("back-to-top");
   const expertBtn     = document.getElementById("expert-button");
   
